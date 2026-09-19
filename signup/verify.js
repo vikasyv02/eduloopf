@@ -1,4 +1,4 @@
-const BaseURL = "https://eduloop-backend.onrender.com";
+const BaseURL = "https://eduloopbackend.onrender.com";
 const verifyForm = document.querySelector(".verify-form");
 const messageBox = document.querySelector(".invalid-code");
 const submitButton = verifyForm.querySelector('.submit-btn');

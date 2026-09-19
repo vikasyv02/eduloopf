@@ -1,5 +1,5 @@
 const loginForm = document.getElementById("loginForm");
-const BaseURL = "https://eduloop-backend.onrender.com";
+const BaseURL = "https://eduloopbackend.onrender.com";
 const submitButton = loginForm.querySelector('.submit-btn');
 const messageBox = document.querySelector(".login-message");
 

@@ -21,7 +21,7 @@ menuIcon.addEventListener('click', function() {
 
 // --- Configuration ---
 // Base URL matches the app.use("/lostAndFound", lostAndFoundRouter) in app.js
-const API_BASE_URL = 'https://eduloop-backend.onrender.com/lostAndFound'; 
+const API_BASE_URL = 'https://eduloopbackend.onrender.com/lostAndFound'; 
 
 // --- DOM Elements ---
 const form = document.getElementById('lostFoundForm');

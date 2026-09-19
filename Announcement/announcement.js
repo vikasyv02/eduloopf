@@ -1,6 +1,6 @@
 // --- Configuration ---
 // Make sure this matches your app.js route (e.g., app.use('/feed', feedRouter))
-const API_BASE_URL = 'https://eduloop-backend.onrender.com/feed';
+const API_BASE_URL = 'https://eduloopbackend.onrender.com/feed';
 
 // --- DOM Elements ---
 const createPostForm = document.getElementById('createPostForm');

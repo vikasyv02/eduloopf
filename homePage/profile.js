@@ -1,4 +1,4 @@
-const BaseURL = "https://eduloop-backend.onrender.com";
+const BaseURL = "https://eduloopbackend.onrender.com";
 
 // 1. Security Check: Grab the VIP Badge
 const token = localStorage.getItem("authToken");

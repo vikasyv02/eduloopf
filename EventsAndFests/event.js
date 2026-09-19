@@ -1,5 +1,5 @@
 // --- Configuration ---
-const API_BASE_URL = 'https://eduloop-backend.onrender.com/event'; 
+const API_BASE_URL = 'https://eduloopbackend.onrender.com/event'; 
 
 // --- DOM Elements ---
 const menuIcon = document.querySelector('.my-menu-icon');

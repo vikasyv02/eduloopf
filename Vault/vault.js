@@ -1,6 +1,6 @@
 // --- Configuration ---
 // Make sure this matches your app.js route (e.g., app.use('/note', noteRouter))
-const API_BASE_URL = "https://eduloop-backend.onrender.com/note";
+const API_BASE_URL = "https://eduloopbackend.onrender.com/note";
 
 // --- DOM Elements ---
 const form = document.getElementById("resourceUploadForm");
