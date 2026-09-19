@@ -1,5 +1,5 @@
 const signupForm = document.getElementById("signupForm");
-const BaseURL = "https://eduloop-backend.onrender.com";
+const BaseURL = "https://eduloopbackend.onrender.com";
 const submitButton = signupForm.querySelector('.submit-btn');
 const messageBox = document.querySelector(".already-exist-message");
 
