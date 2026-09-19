@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduLoop - Profile Settings</title>
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="account-wrapper">
+      <aside class="profile-card">
+        <div class="avatar-box">
+          <img src="../assets/profile.png" alt="User avatar" class="avatar-img" />
+          <input
+            class="change-avatar-btn"
+            type="button"
+            id="changeAvatarBtn"
+            title="Upload new photo"
+          >
+            <i class="fa-solid fa-camera"></i>
+          </button>
+        </div>
+
+        <div class="identity-info">
+          <h2 class="display-name"></h2>
+          <p class="meta-id" id="registration">Reg No: </p>
+          <div class="status-tags">
+            <span class="tag role-tag" id="roleTag">User</span>
+            <span class="tag verified-tag active">
+              <i class="fa-solid fa-circle-check"></i> Verified
+            </span>
+          </div>
+        </div>
+
+        <div class="user-bio">
+          <label for="bio-input">Bio</label>
+          <textarea
+            id="bio-input"
+            maxlength="200"
+            placeholder="Tell us about yourself..."></textarea>
+          <div class="char-counter">
+            <span id="current-count"></span> / 200
+          </div>
+        </div>
+      </aside>
+
+      <main class="panel-body">
+        <header class="panel-header">
+          <h1>Account Settings</h1>
+          <p>Update your academic track and verification details below.</p>
+        </header>
+
+        <form class="settings-form" autocomplete="off">
+          <fieldset class="form-section">
+            <legend>
+              <i class="fa-solid fa-graduation-cap"></i> Academic Profile
+            </legend>
+            <div class="input-grid">
+              <div class="field-box locked">
+                <label
+                  >Registration Number <i class="fa-solid fa-lock"></i
+                ></label>
+                <input type="text" id="registrationValue" value="" readonly tabindex="-1" />
+              </div>
+              <div class="field-box">
+                <label>Course</label>
+                <input type="text" id="courseValue" value="" placeholder="e.g., B.Tech" />
+              </div>
+              <div class="field-box">
+                <label>Branch</label>
+                <input
+                  type="text"
+                  id="branchValue"
+                  value=""
+                  placeholder="e.g., CSE"
+                />
+              </div>
+              <div class="field-row">
+                <div class="field-box">
+                  <label>Year</label>
+                  <input type="number" id="yearValue" value="" min="1" max="5" />
+                </div>
+                <div class="field-box">
+                  <label>Semester</label>
+                  <input type="number" id="semesterValue" value="" min="1" max="10" />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section form-section-2">
+            <legend>
+              <i class="fa-solid fa-user-shield"></i> Personal Credentials
+            </legend>
+            <div class="input-grid">
+              <div class="field-box field-box locked">
+                <label>Full Name</label>
+                <input 
+                type="text" 
+                id="nameValue"
+                value="" 
+                readonly 
+                tabindex="-1"
+                />
+              </div>
+              <div class="field-box locked">
+                <label>Phone Number <i class="fa-solid fa-lock"></i></label>
+                <input
+                  type="tel"
+                  id="phoneValue"
+                  value=""
+                  readonly
+                  tabindex="-1"
+                />
+              </div>
+              <div class="field-box locked">
+                <label>Email Address <i class="fa-solid fa-lock"></i></label>
+                <input
+                  id="emailValue"
+                  type="email"
+                  value=""
+                  readonly
+                  tabindex="-1"
+                  class="lowercase-text"
+                />
+              </div> 
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-muted">Cancel</button>
+            <button type="submit" id="save-changes" class="btn btn-solid">Save Changes</button>
+          </div>
+        </form>
+        <div class="danger-btn">
+          <button type="submit" id="logout-btn" class="btn logout-btn btn-solid">Logout</button>  
+          <button type="submit" id="delete-btn" class="btn logout-btn btn-solid">Delete Account</button>
+        </div>
+      </main>
+    </div>
+
+    <div id="confirmationModal" class="modal-overlay">
+      <div class="modal-card">
+        <div class="modal-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+        <h2 class="modal-title">Are you sure?</h2>
+        <p class="modal-text" id="modal-text"></p>
+        
+        <div class="modal-actions">
+          <button id="cancel-btn" class="btn-secondary">Cancel</button>
+          
+          <form action="#" method="POST" class="modal-form">
+            <button type="submit" id="yes-btn" class="btn-danger">Yes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="profile.js"></script>

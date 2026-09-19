@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eduloop - Campus Feed</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="announcement.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon" />
+  </head>
+  <body class="dashboard-theme">
+        <header class="navbar-wrapper">
+      <div class="navbar-container">
+        <div class="logo">
+          <a href="../homePage/home.html"
+            ><img width="60px" height="60px" src="../assets/logo.png" alt=""
+          /></a>
+        </div>
+        <i class="fa-solid fa-bars my-menu-icon"></i>
+        <nav class="nav-links">
+          <a href="../homePage/home.html">Dashboard</a>
+          <a href="../Vault/vault.html">Vault</a>
+          <a href="../Announcement/announcement.html">Announcements</a>
+          <a href="../EventsAndFests/event.html">Events</a>
+        </nav>
+        <div class="user-avatar-zone">
+          <a href="../homePage/profile.html">
+            <img src="../assets/profile.png" alt="Profile" class="nav-avatar" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="feed-layout">
+      <section class="create-post-box">
+        <form id="createPostForm" enctype="multipart/form-data">
+          <div class="input-wrapper">
+            <img src="../assets/profile.png" alt="User" class="nav-avatar" />
+            <textarea
+              name="content"
+              placeholder="Share an announcement, achievement, or start a discussion..."
+              maxlength="500"
+              required
+              id="announcement-content"
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <div class="file-upload-wrapper">
+              <label for="imageUpload" class="upload-btn">
+                <i class="fa-solid fa-image"></i> Add Image
+              </label>
+              <input
+                type="file"
+                id="imageUpload"
+                name="image"
+                accept="image/*"
+                hidden
+              />
+            </div>
+            <select name="category" class="category-dropdown" required>
+              <option value="discussion" selected>Discussion</option>
+              <option value="announcement">Announcement</option>
+              <option value="achievement">Achievement</option>
+              <option value="club">Club</option>
+              <option value="opportunity">Opportunity</option>
+            </select>
+            <button type="submit" id="post-btn" class="submit-post-btn">Post</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="feed-filters">
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="announcement">
+          Announcements
+        </button>
+        <button class="filter-pill" data-filter="achievement">
+          Achievements
+        </button>
+        <button class="filter-pill" data-filter="opportunity">
+          Opportunities
+        </button>
+        <button class="filter-pill" data-filter="opportunity">
+          Clubs
+        </button>
+        <button class="filter-pill" data-filter="opportunity">
+          Discussions
+        </button>
+      </div>
+
+      <section class="post-stream">
+      </section>
+    </main>
+  </body>
+</html>
+<script src="announcement.js"></script>

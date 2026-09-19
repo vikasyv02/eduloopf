@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eduloop - Events & Fests</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="event.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon" />
+  </head>
+  <body class="dashboard-theme">
+    <header class="navbar-wrapper">
+      <div class="navbar-container">
+        <div class="logo">
+          <a href="../homePage/home.html"
+            ><img width="60px" height="60px" src="../assets/logo.png" alt=""
+          /></a>
+        </div>
+        <i class="fa-solid fa-bars my-menu-icon"></i>
+        <nav class="nav-links">
+          <a href="../homePage/home.html">Dashboard</a>
+          <a href="../Vault/vault.html">Vault</a>
+          <a href="../Announcement/announcement.html">Announcements</a>
+          <a href="../lostAndFound/lost-found.html">Lost & Found</a>
+        </nav>
+        <div class="user-avatar-zone">
+          <a href="../homePage/profile.html">
+            <img src="../assets/profile.png" alt="Profile" class="nav-avatar" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-layout-wrapper">
+      <header class="section-hero">
+        <h1 class="hero-title">Campus Events & Fests</h1>
+        <p class="hero-subtitle">
+          Discover and register for upcoming workshops, sports meets, and
+          cultural fests.
+        </p>
+      </header>
+
+      <details class="new-event-container">
+        <summary class="new-event-toggle">
+          <i class="fa-solid fa-plus"></i> Host a New Event
+        </summary>
+
+        <form
+          id="eventCreationForm"
+          class="event-form-body"
+          enctype="multipart/form-data"
+        >
+          <div class="input-group-row">
+            <input
+              type="text"
+              name="title"
+              class="form-input"
+              placeholder="Event Title"
+              required
+            />
+            <select name="category" class="form-input" required>
+              <option value="" disabled selected>Select Category</option>
+              <option value="tech">Tech</option>
+              <option value="sports">Sports</option>
+              <option value="cultural">Cultural</option>
+              <option value="workshop">Workshop</option>
+              <option value="seminar">Seminar</option>
+              <option value="hackathon">Hackathon</option>
+            </select>
+          </div>
+
+          <div class="input-group-row">
+            <input type="date" name="date" class="form-input" required />
+            <input type="time" name="time" class="form-input" required />
+            <input
+              type="text"
+              name="location"
+              class="form-input"
+              placeholder="Location (e.g., Main Auditorium)"
+              required
+            />
+          </div>
+
+          <div class="input-group-row">
+            <input
+              type="text"
+              name="organizedBy"
+              class="form-input"
+              placeholder="Organized By (e.g., Code Club)"
+              required
+            />
+
+            <div class="file-upload-wrapper">
+              <label for="eventBannerInput" class="file-upload-label">
+                <i class="fa-solid fa-image"></i> Upload Banner Image
+              </label>
+              <input
+                type="file"
+                id="eventBannerInput"
+                name="image"
+                accept="image/*"
+                required
+                hidden
+              />
+            </div>
+          </div>
+
+          <textarea
+            name="description"
+            class="form-textarea"
+            placeholder="Event Description (Max 500 characters)"
+            maxlength="500"
+            required
+          ></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Publish Event</button>
+          </div>
+        </form>
+      </details>
+
+      <div class="filter-tabs-container">
+        <button class="filter-tab is-active" data-category="all">
+          All Events
+        </button>
+        <button class="filter-tab" data-category="tech">
+          Tech & Hackathons
+        </button>
+        <button class="filter-tab" data-category="cultural">Cultural</button>
+        <button class="filter-tab" data-category="sports">Sports</button>
+      </div>
+
+      <section class="events-gallery">
+      </section>
+    </main>
+  </body>
+</html>
+<script src="event.js"></script>

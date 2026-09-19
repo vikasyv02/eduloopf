@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eduloop - Event Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="event.css" />
+    <link rel="stylesheet" href="event-details.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon" />
+  </head>
+  <body class="dashboard-theme">
+    <header class="navbar-wrapper">
+      <div class="navbar-container">
+        <div class="logo">
+          <a href="../homePage/home.html">
+            <img width="60px" height="60px" src="../assets/logo.png" alt="Eduloop Logo"/>
+          </a>
+        </div>
+        <i class="fa-solid fa-bars my-menu-icon"></i>
+        <nav class="nav-links">
+          <a href="../homePage/home.html">Dashboard</a>
+          <a href="../Vault/vault.html">Vault</a>
+          <a href="../Announcement/announcement.html">Announcements</a>
+          <a href="../lostAndFound/lost-found.html" class="active">Lost & Found</a>
+        </nav>
+        <div class="user-avatar-zone">
+          <a href="../homePage/profile.html">
+            <img src="../assets/profile.png" alt="Profile" class="nav-avatar" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-layout-wrapper">
+      
+      <nav class="back-navigation">
+        <a href="event.html" class="btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i> Back to Events
+        </a>
+      </nav>
+
+      <div id="loading-spinner" class="loading-state">
+        <i class="fa-solid fa-spinner fa-spin fa-3x"></i>
+        <p>Loading event details...</p>
+      </div>
+
+      <article id="event-detail-container" class="full-event-card" style="display: none;">
+        
+        <figure class="event-cover-image">
+          <img id="event-detail-banner" src="" alt="Event Banner" />
+        </figure>
+
+        <div class="event-content-body">
+          <div class="event-header-row">
+            <div class="title-section">
+              <span id="event-detail-category" class="category-label">CATEGORY</span>
+              <h1 id="event-detail-title">Event Title</h1>
+              <p class="organizer-info">
+                Hosted by <strong id="event-detail-organizer">Organizer Name</strong>
+              </p>
+            </div>
+            
+            <button id="delete-event-btn" class="btn-icon-danger action-btn" title="Delete Event" style="display: none;">
+              <i class="fa-regular fa-trash-can"></i> Delete Event
+            </button>
+          </div>
+
+          <hr class="event-divider" />
+
+          <div class="event-meta-grid">
+            <div class="meta-box">
+              <div class="meta-icon"><i class="fa-regular fa-calendar"></i></div>
+              <div class="meta-text">
+                <strong>Date</strong>
+                <span id="event-detail-date">Oct 15, 2026</span>
+              </div>
+            </div>
+            
+            <div class="meta-box">
+              <div class="meta-icon"><i class="fa-regular fa-clock"></i></div>
+              <div class="meta-text">
+                <strong>Time</strong>
+                <span id="event-detail-time">10:00 AM</span>
+              </div>
+            </div>
+            
+            <div class="meta-box">
+              <div class="meta-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="meta-text">
+                <strong>Location</strong>
+                <span id="event-detail-location">Main Campus Library</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-description-section">
+            <h3>About this Event</h3>
+            <p id="event-detail-description">Description goes here...</p>
+          </div>
+
+        </div>
+      </article>
+    </main>
+
+    <script src="event-details.js"></script>
+  </body>
+</html>

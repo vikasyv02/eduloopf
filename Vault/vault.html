@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eduloop - Academic Vault</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="vault.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon" />
+  </head>
+  <body class="dashboard-theme">
+    <nav class="top-navigation">
+      <div class="nav-wrapper">
+        <div class="brand-logo">
+          <img
+            width="60px"
+            height="60px"
+            src="../assets/logo.png"
+            alt="Eduloop Logo"
+          />
+        </div>
+         <i class="fa-solid fa-bars my-menu-icon"></i>
+        <div class="nav-links">
+          <a href="../homePage/home.html" class="nav-item">Dashboard</a>
+          <a href="../lostAndFound/lost-found.html" class="nav-item"
+            >Lost & Found</a
+          >
+          <a href="../Vault/vault.html" class="nav-item active">Vault</a>
+          <a href="../Announcement/announcement.html" class="nav-item"
+            >Announcement</a
+          >
+        </div>
+        <a href="../homePage/profile.html" class="user-avatar-link">
+          <img src="../assets/profile.png" alt="Profile" class="user-avatar" />
+        </a>
+      </div>
+    </nav>
+
+    <main class="page-layout-wrapper">
+      <header class="section-hero">
+        <h1 class="hero-title">The Academic Vault</h1>
+        <p class="hero-subtitle">
+          Access and share past year papers, lecture slides, and study notes.
+        </p>
+      </header>
+
+      <details class="new-resource-container">
+        <summary class="new-resource-toggle">
+          <i class="fa-solid fa-cloud-arrow-up"></i> Upload Study Material
+        </summary>
+
+        <form
+          id="resourceUploadForm"
+          class="resource-form-body"
+          enctype="multipart/form-data"
+          action="/upload"
+          method="POST"
+        >
+          <div class="input-group-row">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              class="form-input"
+              placeholder="Note Title (e.g., Unit 1 Graphs)"
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              id="subject"  
+              class="form-input"
+              placeholder="Subject (e.g., Data Structures)"
+              required
+            />
+          </div>
+
+          <div class="input-group-row">
+            <input
+              type="number"
+              name="semester"
+              id="semester"
+              class="form-input"
+              placeholder="Semester (e.g., 3)"
+              min="1"
+              max="10"
+              required
+            />
+
+            <div class="file-upload-wrapper">
+              <label
+                for="pdfUploadInput"
+                class="file-upload-label btn-secondary"
+                id="fileLabelText"
+              >
+                <i class="fa-solid fa-file-pdf"></i>
+                <span id="fileNameDisplay">Choose PDF File</span>
+              </label>
+              <input
+                type="file"
+                id="pdfUploadInput"
+                name="file"
+                accept=".pdf"
+                id="pdfUploadInput"
+                required
+                hidden
+              />
+            </div>
+          </div>
+
+          <textarea
+            name="description"
+            class="form-input"
+            id="description"
+            placeholder="Brief description (Max 200 characters)..."
+            maxlength="200"
+          ></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Upload to Vault</button>
+          </div>
+        </form>
+      </details>
+
+      <div class="vault-toolbar">
+        <div class="search-bar-wrapper">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search by subject or title..."
+          />
+        </div>
+
+        <div class="filter-tabs-container">
+          <button class="filter-tab is-active" data-filter="all">
+            All Semesters
+          </button>
+          <button class="filter-tab" data-filter="sem1">Sem 1</button>
+          <button class="filter-tab" data-filter="sem2">Sem 2</button>
+          <button class="filter-tab" data-filter="sem3">Sem 3</button>
+          <button class="filter-tab" data-filter="sem4">Sem 4</button>
+          <button class="filter-tab" data-filter="sem5">Sem 5</button>
+          <button class="filter-tab" data-filter="sem6">Sem 6</button>
+          <button class="filter-tab" data-filter="sem7">Sem 7</button>
+          <button class="filter-tab" data-filter="sem8">Sem 8</button>
+          <button class="filter-tab" data-filter="sem9">Sem 9</button>
+          <button class="filter-tab" data-filter="sem10">Sem 10</button>
+        </div>
+      </div>
+
+      <section class="resources-grid">
+      </section>
+    </main>
+    
+    <script src="vault.js"></script>
+  </body>
+</html>

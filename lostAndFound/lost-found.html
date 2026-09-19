@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduLoop — Lost & Found Workspace</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="lost-found.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="navbar-wrapper">
+      <div class="navbar-container">
+        <div class="logo">
+          <a href="../homePage/home.html"
+            ><img width="60px" height="60px" src="../assets/logo.png" alt=""
+          /></a>
+        </div>
+        <i class="fa-solid fa-bars my-menu-icon"></i>
+        <nav class="nav-links">
+          <a href="../homePage/home.html">Dashboard</a>
+          <a href="../Vault/vault.html">Vault</a>
+          <a href="../Announcement/announcement.html">Announcements</a>
+          <a href="../EventsAndFests/event.html">Events</a>
+        </nav>
+        <div class="user-avatar-zone">
+          <a href="../homePage/profile.html">
+            <img id="profilePic" src="../assets/profile.png" alt="Profile" class="nav-avatar" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace-wrapper">
+      <section class="workspace-header">
+        <div class="header-text">
+          <h1>Lost & Found Portal</h1>
+          <p>
+            Report claims, track missing belongings, or return found electronics
+            back to peers.
+          </p>
+        </div>
+      </section>
+
+      <details class="new-resource-container">
+        <summary class="new-resource-toggle">
+          <i class="fa-solid fa-bullhorn"></i> Report Lost or Found Item
+        </summary>
+
+        <form
+          id="lostFoundForm"
+          class="resource-form-body"
+          enctype="multipart/form-data"
+          action="#"
+          method="POST"
+        >
+          <div class="input-group-row">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              class="form-input"
+              placeholder="Item Name (e.g., Black Leather Wallet)"
+              required
+            />
+            <select name="status" id="category" class="form-input" required>
+              <option value="lost">I Lost This Item</option>
+              <option value="found">I Found This Item</option>
+            </select>
+          </div>
+
+          <div class="input-group-row">
+            <input
+              type="text"
+              name="location"
+              id="location"
+              class="form-input"
+              placeholder="Last seen / Found at (e.g., Library Floor 2)"
+              required
+            />
+            <input
+              type="text"
+              name="contactInfo"
+              id="contactInfo"
+              class="form-input"
+              placeholder="Contact Info (e.g., Phone No. or Email)"
+              required
+            />
+          </div>
+
+          <div class="input-group-row">
+            <div class="file-upload-wrapper">
+              <label
+                for="itemImageInput"
+                class="file-upload-label btn-secondary"
+              >
+                <i class="fa-solid fa-image"></i> Upload Item Image
+              </label>
+              <input
+                type="file"
+                id="itemImageInput"
+                name="image"
+                accept="image/*"
+                required
+                hidden
+              />
+            </div>
+          </div>
+
+          <textarea
+            name="description"
+            class="form-input"
+            id="description"
+            placeholder="Detailed description (color, brand, distinguishing marks)..."
+            maxlength="500"
+            required
+          ></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-pill-solid">
+              Submit Report
+            </button>
+          </div>
+        </form>
+      </details>
+
+      <section class="filter-toolbar">
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-bar-icon"></i>
+          <input
+            type="text"
+            placeholder="Search keys, wallets, water bottles..."
+          />
+        </div>
+        <div class="filter-tabs">
+          <button class="filter-tab active">All</button>
+          <button class="filter-tab">Lost</button>
+          <button class="filter-tab">Found</button>
+        </div>
+      </section>
+
+      <section class="lost-found-list">
+      </section>
+    </main>
+  </body>
+</html>
+<script src="lost-found.js"></script>

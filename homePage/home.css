@@ -1,0 +1,690 @@
+/* ==========================================================================
+   1. DASHBOARD OVERALL LAYOUT
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  --font-family: "Poppins", sans-serif;
+  /* --card1: #e0f7fa;
+  --card2: #e8f5e9;
+  --card3: #fce4ec;
+  --card4: #fff3e0; */
+}
+body {
+  /* background-color: #fafafa; Minimal off-white outer canvas background */
+  font-family: var(--font-family);
+  background-color: #fdfdfd;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  position: relative;
+  min-height: 97vh;
+  color: #000000;
+}
+
+/* Navbar Extension Compatibility */
+.navbar-wrapper {
+  background: transparent;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  background: #ffffff;
+  padding: 20px;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links a,
+.dropdown-btn {
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 16px;
+  font-family: var(--font-family);
+  border-radius: 100px;
+  padding: 8px 16px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nav-links a:hover,
+.dropdown-btn:hover {
+  color: #000000;
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #dbdbdb;
+}
+
+/* Dropdown Menu CSS */
+.dropdown-trigger {
+  position: relative;
+}
+.features-dropdown {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+
+  position: absolute;
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(20px);
+
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 8px;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s step-end 0.15s;
+}
+.dropdown-trigger:hover .features-dropdown {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateX(-50%) translateY(10px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0s linear;
+}
+.dropdown-trigger.is-open .features-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(10px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0s linear;
+}
+.dropdown-item {
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+/* ==========================================================================
+   2. DASHBOARD MAIN HUB AREA
+   ========================================================================== */
+.dashboard-wrapper {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.welcome-banner {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-banner h1 {
+  font-family: var(--font-family);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.welcome-banner p {
+  color: #666666;
+  font-size: 0.98rem;
+}
+
+/* ==========================================================================
+   3. BENTO GRID METRICS
+   ========================================================================== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+/* Base White Card Configuration (Matches your inputs/settings wrapper tokens) */
+.bento-card {
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  box-sizing: border-box;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Column Weight Assignments */
+.announcements-card {
+  grid-column: span 7;
+}
+.lost-found-card {
+  grid-column: span 5;
+}
+.vault-card {
+  grid-column: span 5;
+}
+.events-card {
+  grid-column: span 7;
+}
+
+/* Sub-component Headings */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   4. COMPONENT SPECIFIC STYLES
+   ========================================================================== */
+
+/* A. Announcements Inner Content */
+.announcement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+.announcement-item {
+  padding: 12px 14px;
+  background: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  position: relative;
+}
+.announcement-item.urgency-high {
+  border-left: 3px solid #000000; /* Subtle high priority focus marker */
+}
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.badge-academic {
+  background: #eef2f7;
+  color: #3b5998;
+}
+.badge-fest {
+  background: #fdf2f2;
+  color: #de350b;
+}
+.item-time {
+  font-size: 0.72rem;
+  color: #888888;
+}
+.announcement-item h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Live Indicator Pulsing Icon */
+.live-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #00e676;
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(0, 230, 118, 0.4);
+  animation: pulse-glow 2s infinite;
+}
+
+/* B. Lost & Found Inner Content */
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-grow: 1;
+  margin-bottom: 12px;
+}
+.feed-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.item-thumb {
+  width: 44px;
+  height: 44px;
+  background: #f0fdf4;
+  color: #15803d;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.item-thumb.lost-thumb {
+  background: #fef2f2;
+  color: #991b1b;
+}
+.item-details {
+  flex-grow: 1;
+  min-width: 0;
+}
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+.item-details h5 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.item-details p {
+  font-size: 0.78rem;
+  color: #666666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.feed-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.tag-found {
+  background: #dcfce7;
+  color: #166534;
+}
+.tag-lost {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* C. Vault Inner Content */
+.vault-search-box {
+  position: relative;
+  margin-bottom: 14px;
+}
+.vault-search-box input {
+  width: 100%;
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  padding: 10px 14px 10px 36px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888888;
+  font-size: 0.85rem;
+}
+.recent-uploads {
+  flex-grow: 1;
+}
+.section-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #888888;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.file-type-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.file-type-badge.pdf {
+  background: #ff4d4f;
+}
+.file-type-badge.zip {
+  background: #ff9c6e;
+}
+.file-name {
+  font-size: 0.82rem;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* D. Events Inner Content */
+.event-showcase {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 1;
+}
+.calendar-badge {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  width: 60px;
+  overflow: hidden;
+  text-align: center;
+  flex-shrink: 0;
+}
+.cal-month {
+  background: #000000;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 0;
+}
+.cal-day {
+  font-size: 1.3rem;
+  font-weight: 800;
+  padding: 6px 0;
+  background: #ffffff;
+}
+.event-info h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.event-info p {
+  font-size: 0.8rem;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   5. BUTTON & LINK UTILITIES (Pill-styles matching your specs)
+   ========================================================================== */
+.card-action-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #000000;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+  align-self: flex-start;
+}
+.card-action-link:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 900px) {
+  .navbar-container {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .announcements-card,
+  .lost-found-card,
+  .vault-card,
+  .events-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .dashboard-wrapper {
+    padding: 16px;
+  }
+
+  .welcome-banner h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .welcome-banner p {
+    text-align: center;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .announcements-card,
+  .lost-found-card,
+  .vault-card,
+  .events-card {
+    grid-column: span 1;
+  }
+
+  .bento-card {
+    min-height: auto;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .event-showcase {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .file-name {
+    white-space: normal;
+  }
+}
+.btn-pill-solid {
+  border-radius: 30px;
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+.btn-pill-solid:hover {
+  background: #222222;
+}
+.btn-pill-muted {
+  border-radius: 30px;
+  background: transparent;
+  color: #555555;
+  border: 1px solid #dbdbdb;
+}
+.btn-pill-muted:hover {
+  color: #000000;
+  border-color: #000000;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.5);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(0, 230, 118, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
+  }
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINT
+   ========================================================================== */
+@media (max-width: 900px) {
+  .announcements-card,
+  .lost-found-card,
+  .vault-card,
+  .events-card {
+    grid-column: span 12;
+  }
+  .bento-grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .welcome-banner h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .welcome-banner p {
+    text-align: center;
+  }
+
+  .bento-card {
+    padding: 18px;
+    min-height: 240px;
+  }
+}
+
+.card1:hover {
+  background-color: var(--card1);
+}
+.card2:hover {
+  background-color: var(--card2);
+}
+.card3:hover {
+  background-color: var(--card3);
+}
+.card4:hover {
+  background-color: var(--card4);
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 16px;
+  }
+
+  .logo img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .nav-links a,
+  .dropdown-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .card-header h3 {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduLoop - Home</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon">
+  </head>
+  <body>
+    <header class="navbar-wrapper">
+      <div class="navbar-container">
+        <div class="logo"><img src="../assets/logo.png" alt=""></div>
+        <nav class="nav-links">
+            <div class="dropdown-trigger">
+              <button class="dropdown-btn nav-btn">Features <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="features-dropdown">
+                <a href="../lostAndFound/lost-found.html" class="dropdown-item card1">Lost & Found <span>🔍</span></a>
+                <a href="../Announcement/announcement.html" class="dropdown-item card2">Announcement <span>📢</span></a>
+                <a href="../Vault/vault.html" class="dropdown-item card3">Vault <span>📁</span></a>
+                <a href="../EventsAndFests/event.html" class="dropdown-item card4">Events & Fests <span>📅</span></a>
+              </div>
+            </div>
+          <a href="about.html" class="nav-btn">About US</a>
+        </nav>
+        <div class="user-avatar-zone">
+          <a href="profile.html">
+            <img src="../assets/profile.png" alt="Profile View" class="nav-avatar" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-wrapper">
+      <section class="welcome-banner">
+        <h1>Hello, <span class="student-name-banner">Student</span> 👋</h1>
+        <p>Your centralized campus dashboard for the day.</p>
+      </section>
+
+      <div class="bento-grid">
+        
+        <section class="bento-card announcements-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-bullhorn"></i> Announcements</h3>
+            <span class="live-pulse"></span>
+          </div>
+          <div class="announcement-list">
+            <div class="announcement-item urgency-high">
+              <div class="meta-row">
+                <span class="badge badge-academic">Academic</span>
+                <span class="item-time">Today</span>
+              </div>
+              <h4>End-Semester Examination Timetable Released for B.Tech Y2</h4>
+            </div>
+            <div class="announcement-item">
+              <div class="meta-row">
+                <span class="badge badge-fest">Fest</span>
+                <span class="item-time">May 28</span>
+              </div>
+              <h4>Hackathon 2026 Registrations are closing tonight at 11:59 PM</h4>
+            </div>
+          </div>
+          <a href="../Announcement/announcement.html" class="card-action-link">View All Notices <i class="fa-solid fa-arrow-right"></i></a>
+        </section>
+
+        <section class="bento-card lost-found-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-magnifying-glass"></i> Lost & Found</h3>
+          </div>
+          <div class="feed-container">
+            <div class="feed-item">
+              <div class="item-thumb"><i class="fa-solid fa-key"></i></div>
+              <div class="item-details">
+                <div class="title-row">
+                  <h5>Boat Airdopes 131 Case</h5>
+                  <span class="feed-tag tag-found">Found</span>
+                </div>
+                <p>Near Block 3 Seminar Hall Canteen</p>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="item-thumb lost-thumb"><i class="fa-solid fa-wallet"></i></div>
+              <div class="item-details">
+                <div class="title-row">
+                  <h5>Black Leather Wallet</h5>
+                  <span class="feed-tag tag-lost">Lost</span>
+                </div>
+                <p>Dropped between Football ground & Library</p>
+              </div>
+            </div>
+          </div>
+          <a href="../lostAndFound/lost-found.html" class="btn btn-pill-solid">Open Lost & Found</a>
+        </section>
+
+        <section class="bento-card vault-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-folder-open"></i> The Academic Vault</h3>
+          </div>
+          <div class="recent-uploads">
+            <p class="section-label">Recent Uploads</p>
+            <div class="file-row">
+              <span class="file-type-badge pdf">PDF</span>
+              <span class="file-name">CSE-302 Data Structures Mid-Sem Paper</span>
+            </div>
+            <div class="file-row">
+              <span class="file-type-badge zip">ZIP</span>
+              <span class="file-name">Digital Electronics Lecture Slides 1-10</span>
+            </div>
+          </div>
+          <a href="../Vault/vault.html" class="card-action-link">Explore Materials <i class="fa-solid fa-arrow-right"></i></a>
+        </section>
+
+        <section class="bento-card events-card">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-calendar-days"></i> Upcoming Events</h3>
+          </div>
+          <div class="event-showcase">
+            <div class="calendar-badge">
+              <span class="cal-month">MAY</span>
+              <span class="cal-day">30</span>
+            </div>
+            <div class="event-info">
+              <h4>CodeLoop '26 Hackathon</h4>
+              <p><i class="fa-solid fa-location-dot"></i> Main Auditorium</p>
+              <p><i class="fa-solid fa-clock"></i> 4:00 PM onwards</p>
+            </div>
+          </div>
+          <a href="../EventsAndFests/events.html" class="btn btn-pill-muted">View All Events</a>
+        </section>
+
+      </div>
+    </main>
+    <script src="home.js"></script>
+  </body>
+</html>

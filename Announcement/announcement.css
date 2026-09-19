@@ -1,0 +1,381 @@
+/* --- Global Reset & Theme --- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #fafafa;
+  color: #111;
+  /* Keeps your grid background */
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.navbar-wrapper {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #555555;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover {
+  color: #000000;
+}
+.nav-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #dbdbdb;
+  object-fit: cover;
+}
+.my-menu-icon {
+  display: none; 
+  font-size: 24px;
+  cursor: pointer;
+  color: #000;
+}
+/* --- Main Layout --- */
+.feed-layout {
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* --- Create Post Box --- */
+.create-post-box {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+.upload-btn {
+  max-width: 150px; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: inline-block;
+  vertical-align: middle;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.input-wrapper {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.input-wrapper textarea {
+  flex: 1;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+  padding-top: 8px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+
+.form-actions button,
+.form-actions select {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-post-btn {
+  background: #000 !important;
+  color: white;
+  font-weight: 600;
+  border: none !important;
+  transition: opacity 0.2s;
+}
+
+.submit-post-btn:hover {
+  opacity: 0.8;
+}
+
+/* --- Filter Pills --- */
+.feed-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.filter-pill {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.filter-pill.active,
+.filter-pill:hover {
+  background: #000;
+  color: white;
+  border-color: #000;
+}
+
+@media (max-width: 600px) {
+  .feed-filters {
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .feed-filters::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .feed-filters::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 999px;
+  }
+
+  .filter-pill {
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+/* --- Post Cards --- */
+.post-card {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  margin-bottom: 20px;
+}
+
+.post-category-stripe {
+  width: 5px;
+  flex-shrink: 0;
+}
+.stripe-announcement {
+  width: 5px;
+  background: #ef4444; /* Red accent */
+}
+.stripe-opportunity {
+  background: #99e0ff; /* Blue accent */
+}
+.stripe-achievement {
+  background: #5dd597; /* Green accent */
+}
+.stripe-club{
+  background: #fbbf24; /* Yellow accent */
+}
+.stripe-discussion{
+  background: #a78bfa; /* Purple accent */
+}
+.post-inner {
+  padding: 20px;
+  width: 100%;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.author-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.author-name {
+  font-weight: 600;
+  display: block;
+}
+
+.post-timestamp {
+  font-size: 12px;
+  color: #888;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.badge-announcement {
+  background: #fef2f2;
+  color: #991b1b;
+}
+.badge-opportunity {
+  background: #dbf4ff;
+  color: #0c4a6e;
+}
+
+.badge-achievement {
+  background: #d1fae5;
+  color: #048804;
+}
+.badge-club {
+  background: #fef9c3;
+  color: #b45309;
+}
+.badge-discussion {
+  background: #f3e8ff;
+  color: #a78bfa;
+}
+
+.post-body p {
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.post-body img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* --- Interactions --- */
+.post-interactions {
+  display: flex;
+  gap: 24px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+  color: #666;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-btn:hover {
+  color: #000;
+}
+
+@media (max-width: 900px) {
+
+    .nav-links {
+    /* 1. Basic positioning */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid #dbdbdb;
+    
+    /* 2. The Animation Magic */
+    opacity: 0;                     /* Completely transparent */
+    visibility: hidden;             /* Hides it from screen readers */
+    transform: translateY(-20px);   /* Starts 20px higher up */
+    pointer-events: none;           /* Prevents accidental clicks while hidden */
+    
+    /* 3. The 'Slow' effect (0.4 seconds) */
+    transition: all 0.4s ease-in-out; 
+  }
+
+  /* When JS adds the 'active' class, this takes over */
+  .nav-links.active {
+    opacity: 1;                   /* Fades in */
+    visibility: visible;          
+    transform: translateY(0);     /* Slides down into exact position */
+    pointer-events: auto;         /* Allows clicking again */
+  }
+
+  .my-menu-icon {
+    display: block;
+  }
+  .feed-layout {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .input-wrapper {
+    flex-direction: column;
+  }
+
+  .post-card {
+    flex-direction: column;
+  }
+
+  .post-category-stripe {
+    width: 100%;
+    height: 4px;
+  }
+
+  .post-interactions {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

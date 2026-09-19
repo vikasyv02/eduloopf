@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ==========================================================================
+   GLOBAL RESETS & THEME (Inherited)
+   ========================================================================== */
+:root {
+  --theme-black: #000000;
+  --theme-bg-canvas: #fafafa;
+  --theme-text-main: #111111;
+  --theme-muted-gray: #666666;
+  --theme-border-gray: #dbdbdb;
+  --base-font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--base-font);
+  background-color: var(--theme-bg-canvas);
+  color: var(--theme-text-main);
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ==========================================================================
+   TOP NAVIGATION
+   ========================================================================== */
+.top-navigation {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid var(--theme-border-gray);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { text-decoration: none; color: #555; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--theme-black); }
+
+.user-avatar { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--theme-border-gray); object-fit: cover; }
+
+/* ==========================================================================
+   ABOUT PAGE LAYOUT
+   ========================================================================== */
+.page-layout-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+/* --- HERO SECTION --- */
+.about-hero {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: #f0f0f0;
+  color: var(--theme-black);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--theme-muted-gray);
+  line-height: 1.6;
+}
+
+/* --- STATS SECTION --- */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  text-align: center;
+  background: #ffffff;
+  padding: 24px 40px;
+  border-radius: 16px;
+  border: 1px solid var(--theme-border-gray);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--theme-black);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--theme-muted-gray);
+  font-weight: 500;
+}
+
+/* --- PILLARS / FEATURES SECTION --- */
+.pillars-section {
+  margin-bottom: 80px;
+}
+
+.section-heading {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.5px;
+  margin-bottom: 40px;
+}
+
+.section-subheading {
+  text-align: center;
+  color: var(--theme-muted-gray);
+  margin-top: -30px;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.pillar-card {
+  background: #ffffff;
+  border: 1px solid var(--theme-border-gray);
+  padding: 32px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+}
+
+.pillar-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--theme-black);
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.pillar-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.pillar-desc {
+  font-size: 14.5px;
+  color: var(--theme-muted-gray);
+  line-height: 1.6;
+}
+
+/* --- TEAM SECTION --- */
+.team-section {
+  margin-bottom: 80px;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  background: #ffffff;
+  border: 1px solid var(--theme-border-gray);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  width: 250px;
+}
+
+.team-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 3px solid #f0f0f0;
+}
+
+.team-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 14px;
+  color: var(--theme-muted-gray);
+  margin-bottom: 16px;
+}
+
+.team-socials a {
+  color: var(--theme-black);
+  font-size: 18px;
+  margin: 0 8px;
+  transition: opacity 0.2s;
+}
+
+.team-socials a:hover {
+  opacity: 0.6;
+}
+
+/* --- CTA & FOOTER --- */
+.cta-section {
+  text-align: center;
+  padding: 60px 0;
+  border-top: 1px solid var(--theme-border-gray);
+}
+
+.cta-section h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--theme-black);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover { opacity: 0.8; }
+
+.simple-footer {
+  text-align: center;
+  padding: 32px 24px;
+  color: var(--theme-muted-gray);
+  font-size: 13px;
+  background: #ffffff;
+  border-top: 1px solid var(--theme-border-gray);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title { font-size: 36px; }
+  .stats-container { flex-direction: column; gap: 16px; }
+}

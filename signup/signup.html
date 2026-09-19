@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signup</title>
+    <link rel="stylesheet" href="signup.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="signup-container">
+      <img
+        width="80px"
+        height="80px"
+        src="../assets/logo.png"
+        alt="eduLoop Logo"
+      />
+      <h1>Sign Up</h1>
+      <form method="post" class="signup-form" id="signupForm">
+        <div class="input-group">
+          <input
+            type="text"
+            id="fullName"
+            class="custom-input"
+            name="fullName"
+            placeholder=" "
+            required
+          />
+          <label for="fullName" class="custom-label">Full Name</label>
+        </div>
+        <div class="input-group">
+          <input
+            type="text"
+            id="phoneNumber"
+            class="custom-input"
+            name="phoneNumber"
+            placeholder=" "
+            required
+          />
+          <label for="phoneNumber" class="custom-label">Phone Number</label>
+        </div>
+        <div class="input-group">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="custom-input"
+            placeholder=" "
+            required
+          />
+          <label for="email" class="custom-label">Email</label>
+        </div>
+        <div class="input-group">
+          <input
+            type="text"
+            id="registrationNumber"
+            class="custom-input"
+            name="registrationNumber"
+            placeholder=" "
+            required
+          />
+          <label for="registrationNumber" class="custom-label"
+            >Registration Number</label
+          >
+        </div>
+        <div class="input-group">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="custom-input"
+            placeholder=" "
+            required
+          />
+          <label for="password" class="custom-label">Password</label>
+        </div>
+        <div class="input-group">
+          <input
+            type="text"
+            id="confirmPassword"
+            name="confirmPassword"
+            class="custom-input"
+            placeholder=" "
+            required
+          />
+          <label for="confirmPassword" class="custom-label"
+            >Confirm Password</label
+          >
+        </div>
+        <div class="check-terms">
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms"
+            >I agree to the
+            <a href="../terms.html" target="_blank"
+              >Terms and Conditions</a
+            ></label
+          >
+        </div>
+        <div class="already-exist-message"></div>
+        <button class="submit-btn" type="submit">Sign Up</button>
+      </form>
+
+      <p>
+        Already have an account? <a href="../Login/login.html">Log in here</a>.
+      </p>
+    </div>
+  </body>
+  <script src="signup.js"></script>
+</html>

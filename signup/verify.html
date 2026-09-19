@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>verification</title>
+    <link rel="stylesheet" href="verify.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="verify-container">
+      <img
+        src="../assets/logo.png"
+        alt="eduLoop Logo"
+        width="80px"
+        height="80px"
+      />
+      <h1>OTP Verification</h1>
+      <p>
+        Enter the verification code sent to your email for verify your identity
+      </p>
+      <form method="post" class="verify-form">
+        <label for="verificationCode" class="custom-label">Enter OTP</label>
+        <input type="text" name="verificationCode" placeholder=" " required />
+        <div class="invalid-code"></div>
+        <button class="submit-btn" type="submit">Verify</button>
+      </form>
+    </div>
+  </body>
+  <script src="verify.js"></script>
+</html>

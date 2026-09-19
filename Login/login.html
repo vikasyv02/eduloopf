@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eduloop - login</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="shortcut icon" href="../assets/loop.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="login-container">
+      <img
+        width="80px"
+        height="80px"
+        src="../assets/logo.png"
+        alt="eduLoop Logo"
+      />
+      <h1>Login</h1>
+      <form action="#" method="post" class="login-form" id="loginForm">
+        <div class="input-group">
+          <input
+            class="custom-input"
+            type="text"
+            id="email"
+            name="email"
+            placeholder=" "
+            required
+          />
+          <label class="custom-label" for="email">Email</label>
+        </div>
+        <div class="input-group">
+          <input
+            class="custom-input"
+            type="password"
+            id="password"
+            name="password"
+            placeholder=" "
+            required
+          />
+          <label class="custom-label" for="password">Password</label>
+        </div>
+        <div class="login-message"></div>
+        <button class="submit-btn" type="submit">Login</button>
+      </form>
+      <div class="forgot-password">Forgot password?</div>
+    </div>
+  </body>
+  <script src="login.js"></script>
+</html>

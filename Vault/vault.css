@@ -1,0 +1,510 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ==========================================================================
+   1. GLOBAL VARIABLES & RESETS
+   ========================================================================== */
+:root {
+  --theme-black: #000000;
+  --theme-bg-canvas: #fafafa;
+  --theme-text-main: #111111;
+  --theme-muted-gray: #666666;
+  --theme-border-gray: #dbdbdb;
+  --base-font:
+    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--base-font);
+  background-color: var(--theme-bg-canvas);
+  color: var(--theme-text-main);
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ==========================================================================
+   2. TOP NAVIGATION
+   ========================================================================== */
+.top-navigation {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid var(--theme-border-gray);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--theme-black);
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--theme-border-gray);
+  object-fit: cover;
+}
+.my-menu-icon {
+  display: none; 
+  font-size: 24px;
+  cursor: pointer;
+  color: #000;
+}
+
+/* ==========================================================================
+   3. MAIN PAGE LAYOUT & HERO
+   ========================================================================== */
+.page-layout-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.section-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  color: var(--theme-muted-gray);
+  font-size: 15px;
+}
+
+/* ==========================================================================
+   4. UPLOAD FORM UI
+   ========================================================================== */
+.new-resource-container {
+  background: #ffffff;
+  border: 1px solid var(--theme-border-gray);
+  border-radius: 12px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.new-resource-toggle {
+  padding: 16px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  background: var(--theme-bg-canvas);
+  transition: background 0.2s;
+}
+
+.new-resource-toggle:hover {
+  background: #f0f0f0;
+}
+
+.new-resource-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.resource-form-body {
+  padding: 20px;
+  border-top: 1px solid var(--theme-border-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group-row {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+}
+
+.form-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--theme-border-gray);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: var(--theme-black);
+}
+
+textarea.form-input {
+  resize: none;
+  min-height: 80px;
+}
+
+.file-upload-wrapper {
+  flex: 1;
+  display: flex;
+}
+
+.file-upload-label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 0;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Base Buttons */
+.btn-primary {
+  background: var(--theme-black);
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: var(--theme-black);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+/* Responsive Form Stacking */
+@media (max-width: 600px) {
+  .input-group-row {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   5. SEARCH & TOOLBAR
+   ========================================================================== */
+.vault-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.search-bar-wrapper {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar-wrapper i {
+  position: absolute;
+  left: 16px;
+  color: #888;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid var(--theme-border-gray);
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--theme-black);
+}
+
+.filter-tabs-container {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-tab {
+  background: #ffffff;
+  border: 1px solid var(--theme-border-gray);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tab.is-active,
+.filter-tab:hover {
+  background: var(--theme-black);
+  color: #ffffff;
+  border-color: var(--theme-black);
+}
+
+/* ==========================================================================
+   6. RESOURCES GRID & CARDS
+   ========================================================================== */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.resource-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.015);
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.file-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+.badge-pdf {
+  background: #fee2e2;
+  color: #dc2626;
+}
+.badge-zip {
+  background: #ffedd5;
+  color: #ea580c;
+}
+.badge-doc {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.course-code-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--theme-muted-gray);
+  background: #f4f5f7;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.resource-body {
+  flex-grow: 1;
+}
+
+.resource-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--theme-text-main);
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.resource-desc {
+  font-size: 13.5px;
+  color: #555;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.resource-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #777;
+  margin: 0 0 20px 0;
+}
+
+.resource-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resource-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--theme-border-gray);
+}
+
+.uploader-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.micro-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.uploader-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #444;
+}
+
+.btn-icon-download {
+  color: var(--theme-black);
+  background: #f4f5f7;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-icon-download:hover {
+  background: var(--theme-black);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+
+  .vault-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-tabs-container {
+    flex-wrap: wrap;
+  }
+
+    .my-menu-icon {
+    display: block;
+  }
+    .nav-links {
+    /* 1. Basic positioning */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid #dbdbdb;
+    
+    /* 2. The Animation Magic */
+    opacity: 0;                     /* Completely transparent */
+    visibility: hidden;             /* Hides it from screen readers */
+    transform: translateY(-20px);   /* Starts 20px higher up */
+    pointer-events: none;           /* Prevents accidental clicks while hidden */
+    
+    /* 3. The 'Slow' effect (0.4 seconds) */
+    transition: all 0.4s ease-in-out; 
+  }
+
+  /* When JS adds the 'active' class, this takes over */
+  .nav-links.active {
+    opacity: 1;                   /* Fades in */
+    visibility: visible;          
+    transform: translateY(0);     /* Slides down into exact position */
+    pointer-events: auto;         /* Allows clicking again */
+  }
+}
+
+@media (max-width: 600px) {
+  
+
+  .page-layout-wrapper {
+    margin: 24px auto;
+  }
+
+  .resource-card {
+    padding: 16px;
+  }
+
+  .resource-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
